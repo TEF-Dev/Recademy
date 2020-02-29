@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace Recademy.Desktop.BaseElements
+namespace Recademy.Desktop.BaseMvvmElements
 {
     public class ActionCommand : ICommand
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace Recademy.Desktop.BaseElements
+namespace Recademy.Desktop.BaseMvvmElements
 {
     public class BaseNotificationClass : INotifyPropertyChanged
     {
