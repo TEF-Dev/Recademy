@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="Recademy.Desktop.View.UserProfileView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Recademy.Desktop.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewElementModel="clr-namespace:Recademy.Desktop.ViewElementModel"
+    xmlns:viewModels="clr-namespace:Recademy.Desktop.ViewModels"
+    Title="UserProfileView"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:UserProfileViewModel />
+    </Page.DataContext>
+    <StackPanel>
+        <Grid Height="150" VerticalAlignment="Top">
+            <Image
+                Width="100"
+                Height="100"
+                Margin="10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top" />
+            <StackPanel
+                Width="300"
+                Margin="120,10"
+                HorizontalAlignment="Left">
+                <Label Content="{Binding Login}" />
+                <Label Content="{Binding Username}" />
+                <Label Content="{Binding PointCount}" />
+            </StackPanel>
+        </Grid>
+        <ScrollViewer Height="300" Margin="10">
+            <StackPanel>
+                <TextBlock Height="30" Text="Skills" />
+                <StackPanel Orientation="Horizontal">
+                    <ItemsControl
+                        Width="90"
+                        Height="90"
+                        ItemsSource="{Binding SkillList}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Label Background="Beige" Content="{Binding SkillName}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
+</Page>
